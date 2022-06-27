@@ -56,16 +56,16 @@ describe('Calculator', () => {
   })
 
   it("should be able to correctly divide one number by another", () => {
-    const button3 = container.getByTestId("number3")
-    const button5 = container.getByTestId("number5")
-    const multiplyButton = container.getByTestId("operator-multiply")
+    const button4 = container.getByTestId("number4")
+    const button2 = container.getByTestId("number2")
+    const divideButton = container.getByTestId("operator-divide")
     const equalsButton = container.getByTestId("operator-equals")
     const runningTotal = container.getByTestId('running-total')
-    fireEvent.click(button3)
-    fireEvent.click(multiplyButton)
-    fireEvent.click(button5)
+    fireEvent.click(button4)
+    fireEvent.click(divideButton)
+    fireEvent.click(button2)
     fireEvent.click(equalsButton)
-    expect(runningTotal.textContent).toEqual("15")
+    expect(runningTotal.textContent).toEqual("2")
   })
 
   it("should be able to concatenate multiple numbers on keypad clicks", () => {
