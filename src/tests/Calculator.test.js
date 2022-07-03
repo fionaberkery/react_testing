@@ -86,6 +86,7 @@ describe('Calculator', () => {
     const button2 = container.getByTestId("number2")
     const button4 = container.getByTestId("number4")
     const button1 = container.getByTestId("number1")
+    const subtractButton = container.getByTestId("operator-subtract")
     const multiplyButton = container.getByTestId("operator-multiply")
     const divideButton = container.getByTestId("operator-divide")
     const addButton = container.getByTestId("operator_add")
@@ -98,8 +99,10 @@ describe('Calculator', () => {
     fireEvent.click(button4)
     fireEvent.click(addButton)
     fireEvent.click(button1)
+    fireEvent.click(subtractButton)
+    fireEvent.click(button1)
     fireEvent.click(equalsButton)
-    expect(runningTotal.textContent).toEqual("4")
+    expect(runningTotal.textContent).toEqual("3")
 })
 
 it("should be able to clear the running total without affecting the calculation", () => {
