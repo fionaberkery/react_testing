@@ -14,12 +14,36 @@ describe("Calculator", () => {
     cy.get('.display').should('contain', '23')
   })
 
-  it('should be able to correctly do a sum', () => {
+  it('should be able to correctly do an multiplication sum', () => {
     cy.get('#number3').click()
     cy.get('#operator-multiply').click()
     cy.get('#number6').click()
     cy.get('#operator-equals').click()
     cy.get('.display').should('contain', '18')
+  })
+  
+    it('should be able to correctly do an addition sum', () => {
+    cy.get('#number2').click()
+    cy.get('#operator_add').click()
+    cy.get('#number6').click()
+    cy.get('#operator-equals').click()
+    cy.get('.display').should('contain', '8')
+  })
+  
+    it('should be able to correctly do an division sum', () => {
+    cy.get('#number9').click()
+    cy.get('#operator-divide').click()
+    cy.get('#number3').click()
+    cy.get('#operator-equals').click()
+    cy.get('.display').should('contain', '3')
+  })
+  
+    it('should be able to correctly do an subtraction sum', () => {
+    cy.get('#number8').click()
+    cy.get('#operator-subtract').click()
+    cy.get('#number1').click()
+    cy.get('#operator-equals').click()
+    cy.get('.display').should('contain', '7')
   })
 
   it('should be able to do multiple sums together', () => {
